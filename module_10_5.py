@@ -23,7 +23,7 @@ if __name__ == '__main__':
     print(f'Линейное выполнение заняло {end_time - start_time} секунд')
 
     start_time2 = time.time()
-    with multiprocessing.Pool() as pool:
+    with multiprocessing.Pool(processes=4) as pool:
         pool.map(read_info, file_list)
     end_time2 = time.time()
     print(f'Многопроцессорное выполнение заняло {end_time2 - start_time2} секунд')
